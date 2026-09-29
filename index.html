@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PRD «Актау Сити» · Этика</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700&family=Golos+Text:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --bg:#F5F7FA; --bg-alt:#ECF0F5; --surface:#FFFFFF; --line:#DCE3EC;
+  --ink:#21304A; --ink-soft:#56627A;
+  --accent:#2D7A74; --accent-soft:#D6EBE8; --on-accent:#FFFFFF;
+  --peach:#F9DDCD; --peach-ink:#9A4A22;
+  --lav:#E2DEF6;   --lav-ink:#5A4BA0;
+  --mint:#D1ECE4;  --mint-ink:#26705E;
+  --rose:#F8DEE5;  --rose-ink:#9A3A58;
+  --sky:#D7E8F7;   --sky-ink:#2D5F8F;
+  --butter:#F7EFCB;--butter-ink:#76600E;
+  --bad:#B3402F; --bad-bg:#FBE3DE;
+  --shadow:0 1px 2px rgba(33,48,74,.06),0 8px 24px -12px rgba(33,48,74,.2);
+  --f-display:"Unbounded","Trebuchet MS",system-ui,sans-serif;
+  --f-body:"Golos Text","Segoe UI",system-ui,-apple-system,sans-serif;
+  --f-mono:ui-monospace,"Cascadia Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --bg:#131923; --bg-alt:#18202C; --surface:#1E2735; --line:#2E3A4C;
+    --ink:#E8EDF5; --ink-soft:#A9B4C6;
+    --accent:#72C9BF; --accent-soft:#1F3A38; --on-accent:#0F1B1A;
+    --peach:#3B2B24; --peach-ink:#F5C0A2;
+    --lav:#2B2944;   --lav-ink:#CBC2F6;
+    --mint:#1D3530;  --mint-ink:#9FDCC9;
+    --rose:#3A2731;  --rose-ink:#F2B7C8;
+    --sky:#1E2E41;   --sky-ink:#A9CDF0;
+    --butter:#35311E;--butter-ink:#EBD98A;
+    --bad:#F2A395; --bad-bg:#3B2320;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 28px -12px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --bg:#131923; --bg-alt:#18202C; --surface:#1E2735; --line:#2E3A4C;
+  --ink:#E8EDF5; --ink-soft:#A9B4C6;
+  --accent:#72C9BF; --accent-soft:#1F3A38; --on-accent:#0F1B1A;
+  --peach:#3B2B24; --peach-ink:#F5C0A2;
+  --lav:#2B2944;   --lav-ink:#CBC2F6;
+  --mint:#1D3530;  --mint-ink:#9FDCC9;
+  --rose:#3A2731;  --rose-ink:#F2B7C8;
+  --sky:#1E2E41;   --sky-ink:#A9CDF0;
+  --butter:#35311E;--butter-ink:#EBD98A;
+  --bad:#F2A395; --bad-bg:#3B2320;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 28px -12px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+code{font-family:var(--f-mono);font-size:.86em;background:var(--accent-soft);color:var(--accent);padding:.1em .4em;border-radius:6px;word-break:break-word}
+.skip{position:absolute;left:-999px;top:8px;background:var(--accent);color:var(--on-accent);padding:8px 14px;border-radius:10px;z-index:10}
+.skip:focus{left:16px}
+
+.wrap{max-width:1200px;margin:0 auto;padding-inline:16px;display:grid;grid-template-columns:220px minmax(0,1fr);gap:48px}
+@media (max-width:960px){.wrap{grid-template-columns:minmax(0,1fr);gap:0}}
+
+/* TOC */
+.toc{position:sticky;top:0;align-self:start;padding-block:28px;max-height:100vh;overflow:auto}
+.toc .logo{display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-weight:600;font-size:14px;line-height:1.25;margin-bottom:20px;color:var(--ink);text-decoration:none}
+.toc ol{list-style:none;margin:0;padding:0;display:grid;gap:1px}
+.toc a.i{display:flex;gap:10px;padding:5px 10px;border-radius:10px;color:var(--ink-soft);text-decoration:none;font-weight:500;font-size:13.5px}
+.toc a.i span{font-variant-numeric:tabular-nums;color:var(--accent);min-width:20px;font-weight:700}
+.toc a.i:hover{background:var(--accent-soft);color:var(--ink)}
+@media (max-width:960px){.toc{display:none}}
+
+main{padding-block:32px 96px;min-width:0}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:32px;align-items:center;padding-bottom:40px;border-bottom:1px solid var(--line)}
+@media (max-width:780px){.hero{grid-template-columns:1fr}}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(26px,4.2vw,44px);line-height:1.1;margin:.3em 0 .4em;text-wrap:balance;letter-spacing:-.01em}
+h1 mark{background:var(--butter);color:inherit;padding:0 .18em;border-radius:.25em}
+.lede{font-size:18px;color:var(--ink-soft);max-width:62ch;margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;padding:4px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);white-space:nowrap}
+.chip.peach{background:var(--peach);color:var(--peach-ink)}
+.chip.lav{background:var(--lav);color:var(--lav-ink)}
+.chip.mint{background:var(--mint);color:var(--mint-ink)}
+.chip.rose{background:var(--rose);color:var(--rose-ink)}
+.chip.sky{background:var(--sky);color:var(--sky-ink)}
+.chip.butter{background:var(--butter);color:var(--butter-ink)}
+.chip.bad{background:var(--bad-bg);color:var(--bad)}
+.hero-art{background:var(--sky);border-radius:28px;overflow:hidden}
+.hero-art svg{display:block;width:100%;height:auto}
+
+/* Sections */
+section{padding-top:64px}
+.sh{display:flex;align-items:baseline;gap:14px;margin-bottom:20px}
+.sh .n{font-family:var(--f-display);font-weight:600;font-size:13px;color:var(--accent);background:var(--accent-soft);border-radius:12px;min-width:38px;height:38px;display:inline-grid;place-items:center;flex:none;font-variant-numeric:tabular-nums;transform:translateY(-4px)}
+h2{font-family:var(--f-display);font-weight:600;font-size:clamp(21px,2.6vw,28px);line-height:1.2;margin:0;text-wrap:balance}
+h3{font-family:var(--f-display);font-weight:600;font-size:16px;line-height:1.3;margin:0 0 8px}
+p{margin:0 0 12px;max-width:70ch}
+.muted{color:var(--ink-soft)}
+.small{font-size:14px}
+.sub{font-family:var(--f-body);font-weight:500;font-size:14px;color:var(--ink-soft)}
+.fid{font-family:var(--f-mono);font-size:12px;color:var(--accent);font-weight:700}
+
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:600px){.g2{grid-template-columns:1fr}}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 20px;box-shadow:var(--shadow);min-width:0}
+.panel{background:var(--bg-alt);border-radius:22px;padding:22px}
+@media (max-width:600px){.panel{padding:16px}}
+
+/* Tables */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{text-align:left;padding:11px 16px;vertical-align:top;border-bottom:1px solid var(--line)}
+th{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);font-weight:700;background:var(--bg-alt)}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:600}
+
+/* Problem → goal */
+.prob{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:700px){.prob{grid-template-columns:1fr}}
+.prob .card{display:flex;gap:14px;align-items:flex-start}
+.prob .ic{flex:none;width:40px;height:40px;border-radius:12px;display:grid;place-items:center}
+.goals{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+@media (max-width:900px){.goals{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.goals{grid-template-columns:1fr}}
+.goal{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.goal b{font-family:var(--f-display);color:var(--accent);font-size:18px;display:block;margin-bottom:4px}
+
+/* Audience */
+.aud{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.aud .card{padding:16px}
+.aud .who{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:6px}
+.aud h3{margin:0;font-size:15px}
+
+/* Scenarios */
+.scen{list-style:none;padding:0;margin:0;display:grid;gap:10px;grid-template-columns:repeat(2,minmax(0,1fr));counter-reset:s}
+@media (max-width:700px){.scen{grid-template-columns:1fr}}
+.scen li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:flex;gap:12px;font-size:14.5px}
+.scen li::before{counter-increment:s;content:counter(s);font-family:var(--f-display);font-weight:700;color:var(--accent);min-width:16px}
+
+/* Scope */
+.scope ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.scope li{display:flex;gap:10px;align-items:flex-start}
+.scope .yes li::before{content:"✓";color:var(--mint-ink);font-weight:800}
+.scope .no li{color:var(--ink-soft)}
+.scope .no li::before{content:"—";color:var(--rose-ink);font-weight:800}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin-bottom:16px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.stat b{font-family:var(--f-display);font-size:30px;line-height:1;display:block;color:var(--accent);font-variant-numeric:tabular-nums}
+.stat span{font-size:13.5px;color:var(--ink-soft)}
+
+/* Structure */
+.struct{display:grid;grid-template-columns:minmax(0,290px) minmax(0,1fr);gap:28px;align-items:start}
+@media (max-width:780px){.struct{grid-template-columns:1fr}}
+.phone{border:2px solid var(--line);border-radius:32px;padding:14px 10px;background:var(--surface);display:grid;gap:5px;max-width:290px;width:100%;margin-inline:auto}
+.phone .blk{border-radius:10px;padding:7px 10px;font-size:12.5px;font-weight:600;display:flex;justify-content:space-between;gap:8px;background:var(--bg-alt);transition:outline-color .15s;outline:2px solid transparent}
+.phone .blk code{background:transparent;padding:0;font-size:10.5px}
+.phone .blk.hl{outline-color:var(--accent)}
+.slist{display:grid;gap:4px;margin:0;padding:0;list-style:none}
+.slist li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;padding:9px 12px;border-radius:12px;border:1px solid transparent;cursor:default}
+.slist li:hover,.slist li.hl{background:var(--surface);border-color:var(--line)}
+.slist .k{font-family:var(--f-display);font-weight:600;color:var(--accent);font-variant-numeric:tabular-nums}
+.slist .c{color:var(--ink-soft);font-size:14px}
+
+/* FR */
+.frs{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:780px){.frs{grid-template-columns:1fr}}
+.fr{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 18px;min-width:0}
+.fr h3{margin:2px 0 8px;font-size:15px}
+.fr p{font-size:14.5px;color:var(--ink-soft);margin-bottom:8px}
+.fr p b{color:var(--ink)}
+.fr .ok{font-size:13.5px;border-top:1px dashed var(--line);padding-top:8px}
+.fr .ok::before{content:"Приёмка: ";font-weight:700;color:var(--mint-ink)}
+
+/* Demos */
+.demo{background:var(--bg-alt);border-radius:22px;padding:20px;margin-bottom:16px}
+.demo-h{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:baseline;margin-bottom:12px}
+.demo-h h3{margin:0}
+.tag{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--butter-ink);background:var(--butter);padding:3px 10px;border-radius:999px}
+.q3{display:grid;gap:8px}
+.q3row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px 14px}
+@media (max-width:600px){.q3row{grid-template-columns:1fr}}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;justify-self:start}
+.seg button{border:0;background:transparent;color:var(--ink);font:600 13.5px var(--f-body);padding:7px 14px;cursor:pointer}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"][data-v="y"]{background:var(--mint);color:var(--mint-ink)}
+.seg button[aria-pressed="true"][data-v="u"]{background:var(--butter);color:var(--butter-ink)}
+.seg button[aria-pressed="true"][data-v="n"]{background:var(--bad-bg);color:var(--bad)}
+.verdict{margin-top:12px;border-radius:14px;padding:12px 16px;font-weight:700;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line)}
+.verdict.y{background:var(--mint);color:var(--mint-ink);border-color:transparent}
+.verdict.u{background:var(--butter);color:var(--butter-ink);border-color:transparent}
+.verdict.n{background:var(--bad-bg);color:var(--bad);border-color:transparent}
+.btn{border-radius:999px;padding:8px 16px;font:600 14px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.btn.pri{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+
+.case{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.opts{display:grid;gap:8px;margin:12px 0}
+.opts button{text-align:left;display:flex;gap:12px;align-items:flex-start;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font:500 14.5px/1.45 var(--f-body);padding:10px 14px;border-radius:12px;cursor:pointer}
+.opts button b{font-family:var(--f-display);font-size:13px;min-width:16px;color:var(--accent)}
+.opts button:disabled{cursor:default}
+.opts button.right{border-color:var(--mint-ink);background:var(--mint)}
+.opts button.wrong{border-color:var(--bad);background:var(--bad-bg)}
+.fb{display:none;border-left:3px solid var(--accent);padding:4px 0 4px 12px;font-size:14.5px}
+.fb.show{display:block}
+
+.ticket{font-family:var(--f-mono);font-size:13px;background:var(--bg-alt);border:1px dashed var(--line);border-radius:14px;padding:14px 16px;white-space:pre-wrap;line-height:1.55;margin:12px 0 0;overflow-wrap:anywhere}
+
+/* Topics tabs */
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;margin-bottom:12px}
+.tabs button{flex:none;border:1.5px solid transparent;font:600 14px var(--f-body);padding:8px 14px;border-radius:12px;cursor:pointer;background:var(--c);color:var(--ci)}
+.tabs button[aria-selected="true"]{border-color:var(--ci)}
+.tp{border-radius:20px;padding:20px;background:var(--c)}
+.tp .cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
+@media (max-width:860px){.tp .cols{grid-template-columns:1fr}}
+.tp .box{background:var(--surface);border-radius:14px;padding:14px 16px;font-size:14.5px}
+.tp .box h4{margin:0 0 6px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ci)}
+.tp ul{margin:0;padding-left:18px}
+.t-peach{--c:var(--peach);--ci:var(--peach-ink)}
+.t-lav{--c:var(--lav);--ci:var(--lav-ink)}
+.t-mint{--c:var(--mint);--ci:var(--mint-ink)}
+.t-rose{--c:var(--rose);--ci:var(--rose-ink)}
+.t-sky{--c:var(--sky);--ci:var(--sky-ink)}
+.t-butter{--c:var(--butter);--ci:var(--butter-ink)}
+
+.cases{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.cs{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--ci);border-radius:14px;padding:12px 14px;font-size:14px}
+.cs .top{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:4px}
+.cs .top code{background:var(--c);color:var(--ci)}
+.cs b{display:block;font-size:14.5px}
+.cs .ans{color:var(--ink-soft);margin-top:4px}
+
+/* FAQ bars */
+.bars{display:grid;gap:8px}
+.bar-row{display:grid;grid-template-columns:190px minmax(0,1fr) 28px;gap:12px;align-items:center;font-size:14px}
+@media (max-width:560px){.bar-row{grid-template-columns:120px minmax(0,1fr) 24px;font-size:13px}}
+.bar-row .tr{height:14px;background:var(--surface);border-radius:999px;overflow:hidden}
+.bar-row .tr i{display:block;height:100%;border-radius:999px;background:var(--ci)}
+.bar-row b{font-variant-numeric:tabular-nums;text-align:right}
+
+/* Laws */
+.std{display:flex;flex-wrap:wrap;gap:8px}
+.std span{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:6px 12px;font-size:13.5px;font-weight:600}
+.ref{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
+.ref .card{flex:1 1 220px;padding:14px 16px}
+.ref b{font-family:var(--f-display);font-size:22px;color:var(--accent);display:block}
+
+/* Hotline */
+.chan{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.chan .card{padding:16px;display:flex;flex-direction:column;gap:6px}
+.chan .ico{width:38px;height:38px;border-radius:12px;background:var(--butter);color:var(--butter-ink);display:grid;place-items:center}
+.chan .v{font-family:var(--f-mono);font-size:13px;overflow-wrap:anywhere}
+.chan .ext{background:var(--accent);color:var(--on-accent);border-color:transparent}
+.chan .ext .ico{background:rgba(255,255,255,.2);color:inherit}
+.chan .ext .muted{color:inherit;opacity:.85}
+.guar{list-style:none;padding:0;margin:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.guar li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:14px;color:var(--ink-soft)}
+.guar b{display:block;color:var(--ink);font-size:15px;margin-bottom:2px}
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:8px}
+.step{position:relative;padding:0 10px}
+.step .dot{width:44px;height:44px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-family:var(--f-display);font-weight:700;position:relative;z-index:1}
+.step::before{content:"";position:absolute;top:21px;left:10px;right:-10px;height:2px;background:var(--line)}
+.step:last-child::before{display:none}
+.step h4{margin:10px 0 2px;font-size:14.5px}
+.step .t{font-family:var(--f-display);font-size:14px;color:var(--accent)}
+@media (max-width:760px){
+  .flow{grid-template-columns:1fr;gap:12px}
+  .step{display:grid;grid-template-columns:44px 1fr;gap:0 12px;align-items:center;padding:0}
+  .step::before{display:none}
+  .step h4{margin:0}
+}
+
+/* Design */
+.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
+.swatch{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.swatch .c{height:60px;display:flex;align-items:flex-end;padding:6px 8px;font:600 11px var(--f-mono)}
+.swatch .lab{padding:8px 10px;font-size:13px}
+.fonts{display:grid;gap:12px}
+.font{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:16px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 20px}
+@media (max-width:600px){.font{grid-template-columns:1fr;gap:4px}}
+.font .spec{font-size:26px;line-height:1.2;overflow-wrap:anywhere}
+.font .info{font-size:13px;color:var(--ink-soft)}
+.font .info b{color:var(--ink);display:block;font-size:14px}
+.illus{display:flex;flex-wrap:wrap;gap:10px}
+.illus span{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:12px;color:var(--ink-soft);width:84px;text-align:center}
+.illus i{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-style:normal}
+
+/* Data model */
+.dm{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.dm .card{padding:14px 16px}
+.dm h3{font-family:var(--f-mono);font-size:14px;color:var(--accent);margin-bottom:6px}
+.dm .f{display:flex;flex-wrap:wrap;gap:5px}
+.dm .f code{font-size:12px}
+
+/* Questions */
+.qs{display:grid;gap:8px}
+.qrow{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px 14px;font-size:14.5px}
+.qrow .qid{font-family:var(--f-display);font-weight:700;color:var(--accent);font-size:13px}
+.qrow .own{font-size:12.5px;color:var(--ink-soft);text-align:right}
+@media (max-width:600px){.qrow{grid-template-columns:36px minmax(0,1fr)}.qrow .own{grid-column:2;text-align:left}}
+
+/* Roadmap */
+.road{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+@media (max-width:900px){.road{grid-template-columns:1fr}}
+.rv{background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--ci);border-radius:14px;padding:14px;font-size:14px}
+.rv b{font-family:var(--f-display);font-size:18px;display:block;color:var(--ci);margin-bottom:4px}
+
+/* Checklist */
+.checks{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.checks label{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px;cursor:pointer}
+.checks input{width:20px;height:20px;accent-color:var(--accent);flex:none;margin-top:2px}
+.checks input:checked + span{color:var(--ink-soft);text-decoration:line-through}
+.progress{display:flex;align-items:center;gap:12px;margin-bottom:14px;font-weight:600;flex-wrap:wrap}
+.bar{flex:1;min-width:120px;height:10px;background:var(--accent-soft);border-radius:999px;overflow:hidden;max-width:320px}
+.bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+
+.src{list-style:none;padding:0;margin:0;display:grid;gap:6px;font-size:14px}
+.src a{overflow-wrap:anywhere}
+
+footer{margin-top:72px;padding-top:24px;border-top:1px solid var(--line);color:var(--ink-soft);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+</style>
+</head>
+<body>
+<a class="skip" href="#top">Перейти к содержанию</a>
+<div class="wrap">
+
+<nav class="toc" aria-label="Содержание">
+  <a class="logo" href="#top">
+    <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="10" fill="var(--accent)"/><path d="M17 7l8 3v6c0 5-3.5 8-8 9.5C12.5 24 9 21 9 16v-6z" fill="none" stroke="var(--on-accent)" stroke-width="2"/><path d="M13.5 16.5l2.5 2.5 4.5-5" fill="none" stroke="var(--on-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    PRD «Актау Сити»<br>этика и комплаенс
+  </a>
+  <ol>
+    <li><a class="i" href="#s1"><span>1</span>Кратко</a></li>
+    <li><a class="i" href="#s2"><span>2</span>Контекст</a></li>
+    <li><a class="i" href="#s3"><span>3</span>Цели и метрики</a></li>
+    <li><a class="i" href="#s4"><span>4</span>Аудитория</a></li>
+    <li><a class="i" href="#s5"><span>5</span>Сценарии</a></li>
+    <li><a class="i" href="#s6"><span>6</span>Объём</a></li>
+    <li><a class="i" href="#s7"><span>7</span>Структура</a></li>
+    <li><a class="i" href="#s8"><span>8</span>Функции</a></li>
+    <li><a class="i" href="#s9"><span>9</span>Контент</a></li>
+    <li><a class="i" href="#s10"><span>10</span>Правовая основа</a></li>
+    <li><a class="i" href="#s11"><span>11</span>Горячая линия</a></li>
+    <li><a class="i" href="#s12"><span>12</span>Нефункциональные</a></li>
+    <li><a class="i" href="#s13"><span>13</span>Дизайн</a></li>
+    <li><a class="i" href="#s14"><span>14</span>Модель данных</a></li>
+    <li><a class="i" href="#s15"><span>15</span>Открытые вопросы</a></li>
+    <li><a class="i" href="#s16"><span>16</span>Дорожная карта</a></li>
+    <li><a class="i" href="#s17"><span>17</span>Приёмка</a></li>
+    <li><a class="i" href="#s18"><span>18</span>Источники</a></li>
+  </ol>
+</nav>
+
+<main id="top">
+
+<header class="hero">
+  <div>
+    <div class="eyebrow">Product Requirements · v1.0 · 29.09.2026</div>
+    <h1>Сайт деловой этики и комплаенса ТОО «<mark>Актау Сити</mark>»</h1>
+    <p class="lede">Кодекс деловой этики, разборы кейсов, ответы на вопросы, законы РК и мировые стандарты, а также горячая линия для сотрудников и третьих лиц. На трёх языках.</p>
+    <div class="meta">
+      <span class="chip butter">Черновик на согласование</span>
+      <span class="chip">Прототип v2 опубликован</span>
+      <span class="chip lav">RU · ҚАЗ · EN</span>
+      <span class="chip sky">Правовая база: сентябрь 2026</span>
+    </div>
+    <p class="small muted" style="margin-top:16px">Владелец: комплаенс-служба <em>(указать ответственного)</em>. Согласуют руководство, юристы, HR, ИТ и информационная безопасность.</p>
+  </div>
+  <div class="hero-art" role="img" aria-label="Иллюстрация: окно с видом на Каспий и маяк Актау">
+    <svg viewBox="0 0 380 250" aria-hidden="true">
+      <rect width="380" height="250" fill="var(--sky)"/>
+      <circle cx="300" cy="62" r="24" fill="var(--butter)"/>
+      <path d="M0 150 Q 95 140 190 150 T 380 150 V250 H0Z" fill="var(--accent)" opacity=".35"/>
+      <path d="M0 170 Q 95 160 190 170 T 380 170 V250 H0Z" fill="var(--accent)" opacity=".5"/>
+      <path d="M40 158 h60 M150 176 h40 M250 162 h70" stroke="var(--surface)" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+      <g transform="translate(88 60)">
+        <path d="M8 90 L14 20 H26 L32 90Z" fill="var(--surface)"/>
+        <path d="M11 55 H29 M9.5 72 H30.5" stroke="var(--rose-ink)" stroke-width="5"/>
+        <rect x="11" y="8" width="18" height="14" rx="2" fill="var(--butter-ink)"/>
+        <path d="M29 12 L70 -2 L70 26Z" fill="var(--butter)" opacity=".6"/>
+      </g>
+      <rect x="0" y="0" width="380" height="250" fill="none" stroke="var(--surface)" stroke-width="22"/>
+      <line x1="190" y1="0" x2="190" y2="206" stroke="var(--surface)" stroke-width="10"/>
+      <rect x="0" y="206" width="380" height="44" fill="var(--surface)"/>
+      <circle cx="236" cy="176" r="15" fill="var(--peach)"/><path d="M212 214 q24-34 48 0" fill="var(--lav-ink)"/>
+      <circle cx="286" cy="170" r="16" fill="var(--rose)"/><path d="M260 214 q26-38 52 0" fill="var(--mint-ink)"/>
+      <circle cx="334" cy="180" r="14" fill="var(--peach)"/><path d="M312 214 q22-30 44 0" fill="var(--peach-ink)"/>
+    </svg>
+  </div>
+</header>
+
+<!-- 1 -->
+<section id="s1">
+  <div class="sh"><span class="n">1</span><h2>Кратко о продукте</h2></div>
+  <p>Публичный одностраничный сайт с Кодексом деловой этики. Сотрудник учится на нём правильно поступать в конкретных ситуациях, а любой человек, от сотрудника до жителя, может безопасно сообщить о нарушении.</p>
+  <div class="stats">
+    <div class="stat"><b>9</b><span>разделов на странице</span></div>
+    <div class="stat"><b>5</b><span>тем Кодекса</span></div>
+    <div class="stat"><b>11</b><span>интерактивных кейсов</span></div>
+    <div class="stat"><b>21</b><span>вопрос с ответом</span></div>
+    <div class="stat"><b>12</b><span>международных стандартов</span></div>
+    <div class="stat"><b>3</b><span>языка: RU, ҚАЗ, EN</span></div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="s2">
+  <div class="sh"><span class="n">2</span><h2>Контекст и проблема</h2></div>
+  <div class="prob">
+    <div class="card"><span class="ic" style="background:var(--sky);color:var(--sky-ink)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M5 7h14M3 14l2-7 2 7a2 2 0 01-4 0zM17 14l2-7 2 7a2 2 0 01-4 0z"/></svg></span><div><h3>Требование закона</h3><p class="small muted" style="margin:0">Ст. 16 Закона РК «О противодействии коррупции»: бизнес обязан предотвращать конфликт интересов, соблюдать нормы деловой этики и формировать антикоррупционную культуру. Нужен инструмент, который показывает, как это работает на практике.</p></div></div>
+    <div class="card"><span class="ic" style="background:var(--peach);color:var(--peach-ink)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 015 0c0 2-2.5 2-2.5 4M12 17h.01"/></svg></span><div><h3>Правила знают в общих словах</h3><p class="small muted" style="margin:0">Непонятно, как поступить в конкретной ситуации: подарок во время тендера, родственник среди поставщиков, звонок с просьбой сообщить данные жителя.</p></div></div>
+    <div class="card"><span class="ic" style="background:var(--butter);color:var(--butter-ink)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5h16v11H9l-5 4z"/></svg></span><div><h3>Третьим лицам некуда сообщить</h3><p class="small muted" style="margin:0">Партнёрам, подрядчикам и жителям негде безопасно сообщить о недобросовестном поведении сотрудников Компании.</p></div></div>
+    <div class="card"><span class="ic" style="background:var(--mint);color:var(--mint-ink)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span><div><h3>Новые нормы 2026 года</h3><p class="small muted" style="margin:0">С 4 августа Трудовой кодекс закрепил право на уважение чести и достоинства. С сентября действуют новые правила уведомления об утечках персональных данных.</p></div></div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="s3">
+  <div class="sh"><span class="n">3</span><h2>Цели и метрики</h2></div>
+  <div class="goals">
+    <div class="goal"><b>G1</b>Донести Кодекс до каждого сотрудника понятным языком, с примерами из работы Компании</div>
+    <div class="goal"><b>G2</b>Дать сотрудникам и третьим лицам конфиденциальный и анонимный канал для сообщений</div>
+    <div class="goal"><b>G3</b>Показать связь внутренних правил с законами РК и международными стандартами</div>
+    <div class="goal"><b>G4</b>Снизить число нарушений в зонах риска: закупки, подарки, конфликт интересов, данные</div>
+  </div>
+  <h3 style="margin-top:28px">Метрики успеха <span class="sub">предлагаемые, согласовать с владельцем</span></h3>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Метрика</th><th>Целевое значение</th><th>Как измерять</th></tr></thead>
+      <tbody>
+        <tr><td>Доля сотрудников, прошедших все кейсы</td><td>≥ 90 % за 3 месяца после запуска</td><td>Нужен учёт прохождения (v2.1)</td></tr>
+        <tr><td>Число обращений на горячую линию</td><td>Рост в первые 6 месяцев: это признак доверия, а не роста нарушений</td><td>Журнал комплаенс-службы</td></tr>
+        <tr><td>Соблюдение сроков рассмотрения</td><td>100 %: регистрация 1 раб. день, оценка 5 раб. дней, проверка до 30 кал. дней</td><td>Журнал комплаенс-службы</td></tr>
+        <tr><td>Доля обращений от третьих лиц</td><td>Отслеживается</td><td>Поле «Кто вы?» в обращении</td></tr>
+        <tr><td>Случаи преследования заявителей</td><td><span class="chip bad">0</span></td><td>Проверки комплаенс-службы</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="s4">
+  <div class="sh"><span class="n">4</span><h2>Аудитория</h2></div>
+  <div class="aud">
+    <div class="card"><div class="who"><h3>Сотрудники</h3><span class="chip">внутри</span></div><p class="small muted" style="margin:0">Понять правила, разобрать кейсы, найти ответ, сообщить о нарушении.</p></div>
+    <div class="card"><div class="who"><h3>Руководители</h3><span class="chip">внутри</span></div><p class="small muted" style="margin:0">Всё то же, что сотрудники, плюс пример «тона сверху» и ответственность за запрет преследования.</p></div>
+    <div class="card"><div class="who"><h3>Комплаенс-служба</h3><span class="chip">владелец</span></div><p class="small muted" style="margin:0">Владеет контентом, принимает и рассматривает обращения.</p></div>
+    <div class="card"><div class="who"><h3>Партнёры и поставщики</h3><span class="chip peach">снаружи</span></div><p class="small muted" style="margin:0">Узнать требования к партнёрам, сообщить о просьбах «отката» или подарка.</p></div>
+    <div class="card"><div class="who"><h3>Подрядчики</h3><span class="chip peach">снаружи</span></div><p class="small muted" style="margin:0">Сообщить о нарушениях безопасности и о требованиях «отблагодарить» за приёмку.</p></div>
+    <div class="card"><div class="who"><h3>Жители и клиенты</h3><span class="chip peach">снаружи</span></div><p class="small muted" style="margin:0">Пожаловаться на грубость, вымогательство, неправомерное использование данных.</p></div>
+    <div class="card"><div class="who"><h3>Кандидаты</h3><span class="chip peach">снаружи</span></div><p class="small muted" style="margin:0">Узнать ценности Компании, сообщить о нарушениях при найме.</p></div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="s5">
+  <div class="sh"><span class="n">5</span><h2>Пользовательские сценарии</h2></div>
+  <ol class="scen">
+    <li><span><b>Сотрудник закупок:</b> быстро узнать, можно ли принять подарок от поставщика.</span></li>
+    <li><span><b>Член тендерной комиссии:</b> понять, что делать, если среди участников компания родственника.</span></li>
+    <li><span><b>Оператор колл-центра:</b> знать, кому и когда можно сообщать сведения о жителе.</span></li>
+    <li><span><b>Свидетель травли:</b> анонимно сообщить и быть уверенным, что не накажут.</span></li>
+    <li><span><b>Подрядчик:</b> сообщить, что сотрудник требует вознаграждение за подписание акта.</span></li>
+    <li><span><b>Житель:</b> пожаловаться, что его данные опубликовали в общем чате дома.</span></li>
+    <li><span><b>Сомневающийся сотрудник:</b> пройти проверку «можно ли так поступить» до решения.</span></li>
+    <li><span><b>Англоязычный партнёр:</b> прочитать требования и контакты горячей линии на английском.</span></li>
+  </ol>
+</section>
+
+<!-- 6 -->
+<section id="s6">
+  <div class="sh"><span class="n">6</span><h2>Объём</h2></div>
+  <div class="grid g2 scope">
+    <div class="card yes">
+      <h3><span class="chip mint">В объёме · реализовано в прототипе</span></h3>
+      <ul>
+        <li>Одностраничный сайт с 9 разделами</li>
+        <li>RU / ҚАЗ / EN, переключение без перезагрузки</li>
+        <li>5 тем, 11 кейсов, 21 вопрос, этический фильтр</li>
+        <li>Законы РК со ссылками на adilet.zan.kz и 12 международных стандартов</li>
+        <li>Горячая линия: каналы, внешний канал 1424, гарантии, порядок рассмотрения, форма обращения</li>
+        <li>Раздел для третьих лиц и требования к партнёрам</li>
+        <li>Адаптивная вёрстка, светлая и тёмная тема</li>
+      </ul>
+    </div>
+    <div class="card no">
+      <h3><span class="chip rose">Вне объёма v1</span></h3>
+      <ul>
+        <li>Серверный приём и хранение обращений (форма только составляет текст)</li>
+        <li>Личные кабинеты, авторизация, учёт прохождения обучения</li>
+        <li>Онлайн-журнал подарков и декларации о конфликте интересов</li>
+        <li>Отслеживание статуса обращения по номеру</li>
+        <li>Аналитика посещений</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="s7">
+  <div class="sh"><span class="n">7</span><h2>Структура сайта</h2></div>
+  <div class="struct">
+    <div class="phone" id="phone" aria-hidden="true">
+      <div class="blk" data-k="0" style="background:var(--accent-soft)">≡ Шапка <code>RU ҚАЗ EN</code></div>
+      <div class="blk" data-k="1" style="background:var(--sky);min-height:62px">Главный экран <code>#top</code></div>
+      <div class="blk" data-k="2">Ценности <code>#values</code></div>
+      <div class="blk" data-k="3" style="background:var(--peach)">Темы <code>#topics</code></div>
+      <div class="blk" data-k="4" style="background:var(--lav);min-height:48px">Кейсы <code>#cases</code></div>
+      <div class="blk" data-k="5" style="background:var(--mint)">Этический фильтр <code>#check</code></div>
+      <div class="blk" data-k="6">Вопросы и ответы <code>#faq</code></div>
+      <div class="blk" data-k="7" style="background:var(--rose)">Законы <code>#laws</code></div>
+      <div class="blk" data-k="8">Партнёрам <code>#partners</code></div>
+      <div class="blk" data-k="9" style="background:var(--butter);min-height:48px">Горячая линия <code>#hotline</code></div>
+      <div class="blk" data-k="10" style="background:var(--accent-soft)">Подвал</div>
+    </div>
+    <ul class="slist" id="slist">
+      <li data-k="0"><span class="k">0</span><div><b>Шапка</b><div class="c">Логотип, меню разделов, переключатель RU / ҚАЗ / EN, кнопка «Сообщить»</div></div></li>
+      <li data-k="1"><span class="k">1</span><div><b>Главный экран</b> <code>#top</code><div class="c">«Честно — даже когда никто не видит», кнопки «Сообщить о нарушении» и «Разобрать кейсы», ссылки для трёх аудиторий, редакция и МРП, иллюстрация с Каспием и маяком</div></div></li>
+      <li data-k="2"><span class="k">2</span><div><b>Ценности</b> <code>#values</code><div class="c">Обращение руководства; честность, уважение, прозрачность, ответственность, безопасность</div></div></li>
+      <li data-k="3"><span class="k">3</span><div><b>Темы</b> <code>#topics</code><div class="c">Пять тем во вкладках</div></div></li>
+      <li data-k="4"><span class="k">4</span><div><b>Кейсы</b> <code>#cases</code><div class="c">11 кейсов с выбором ответа и разбором</div></div></li>
+      <li data-k="5"><span class="k">5</span><div><b>Этический фильтр</b> <code>#check</code><div class="c">Пять вопросов «да / не уверен / нет» и «Куда обратиться»</div></div></li>
+      <li data-k="6"><span class="k">6</span><div><b>Вопросы и ответы</b> <code>#faq</code><div class="c">21 вопрос с фильтром по темам и поиском</div></div></li>
+      <li data-k="7"><span class="k">7</span><div><b>Законы</b> <code>#laws</code><div class="c">Законы РК и международные стандарты</div></div></li>
+      <li data-k="8"><span class="k">8</span><div><b>Партнёрам</b> <code>#partners</code><div class="c">Что сообщать партнёрам, подрядчикам и жителям; ожидания от партнёров</div></div></li>
+      <li data-k="9"><span class="k">9</span><div><b>Горячая линия</b> <code>#hotline</code><div class="c">Каналы, внешний канал 1424, форма, гарантии, порядок рассмотрения</div></div></li>
+      <li data-k="10"><span class="k">10</span><div><b>Подвал</b><div class="c">Название, редакция, оговорка о разъяснительном характере</div></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 8 -->
+<section id="s8">
+  <div class="sh"><span class="n">8</span><h2>Функциональные требования</h2></div>
+
+  <div class="demo">
+    <div class="demo-h"><h3><span class="fid">FR-4</span> Этический фильтр</h3><span class="tag">живой пример</span></div>
+    <p class="small muted">Логика взята из PRD. Формулировок пяти вопросов в PRD нет, здесь приведены примерные.</p>
+    <div class="q3" id="filter"></div>
+    <div class="verdict" id="verdict" aria-live="polite"></div>
+  </div>
+
+  <div class="demo">
+    <div class="demo-h"><h3><span class="fid">FR-3</span> Кейс c1 · Брат участвует в тендере</h3><span class="tag">живой пример</span></div>
+    <div class="case">
+      <span class="chip lav">Конфликт интересов</span>
+      <p style="margin:10px 0 4px">Данияр входит в тендерную комиссию. В списке участников он видит компанию, где директором работает его брат.</p>
+      <b>Как ему поступить?</b>
+      <div class="opts" id="opts"></div>
+      <div class="fb" id="fb" aria-live="polite"></div>
+      <p class="small muted" style="margin:10px 0 0">Варианты ответа составлены для примера, верное действие взято из таблицы кейсов (раздел 9.2).</p>
+    </div>
+  </div>
+
+  <div class="frs">
+    <div class="fr"><span class="fid">FR-1</span><h3>Переключение языка</h3><p>RU / ҚАЗ / EN меняют все тексты, включая темы, кейсы, вопросы, законы, подписи формы и заголовок вкладки. Выбор запоминается в браузере.</p><div class="ok">нет смешения языков; язык сохраняется после перезагрузки; <code>lang</code> = ru / kk / en</div></div>
+    <div class="fr"><span class="fid">FR-2</span><h3>Темы во вкладках</h3><p>Иллюстрация, вводный текст, 4 пункта «Как правильно», 4 «Чего не делать», «Законодательство РК», «Мировая практика». У каждой темы свой цвет.</p><div class="ok">переключение мышью и стрелками; <code>aria-selected="true"</code> у активной</div></div>
+    <div class="fr"><span class="fid">FR-3</span><h3>Кейсы</h3><p>Список со статусом (не решён / верно / неверно). Ситуация, вопрос, варианты A, B, C. После выбора: блокировка, подсветка, отзыв, разбор, нормы и мировая практика. Кнопки «Попробовать снова» и «Следующий кейс».</p><div class="ok">счётчик «Решено верно: N из 11»; верный ответ на разных позициях; на телефоне список листается горизонтально</div></div>
+    <div class="fr"><span class="fid">FR-4</span><h3>Этический фильтр</h3><p>Пять вопросов «Да / Не уверен(а) / Нет». Любое «Нет» → «Не делайте этого»; есть «Не уверен» → «Остановитесь и посоветуйтесь»; все «Да» → «Скорее всего, можно действовать». Кнопка «Сбросить».</p><div class="ok">результат меняется сразу; до конца — «Отвечено: N из 5»</div></div>
+    <div class="fr"><span class="fid">FR-5</span><h3>Вопросы и ответы</h3><p>Раскрывающиеся вопросы с цветной меткой темы; фильтр (Все + 6 тем) и поиск по тексту на текущем языке.</p><div class="ok">пусто → «Ничего не найдено. Задайте вопрос через горячую линию.»</div></div>
+    <div class="fr"><span class="fid">FR-6</span><h3>Законы</h3><p>Название, дата и номер, значимые статьи, ссылка на adilet.zan.kz на языке интерфейса (<code>rus</code> / <code>kaz</code> / <code>eng</code>).</p><div class="ok">ссылки открываются в новой вкладке</div></div>
+    <div class="fr"><span class="fid">FR-7</span><h3>Контакты горячей линии</h3><p>Телефон, e-mail, Telegram с кнопкой «Копировать», всё из объекта <code>HOTLINE</code>. При <code>demo: true</code> контакты выводятся текстом с пометкой «образец», при <code>demo: false</code> становятся ссылками <code>tel:</code>, <code>mailto:</code>, <code>t.me</code>.</p><div class="ok">если буфер недоступен — текст выделяется, подсказка Ctrl+C</div></div>
+    <div class="fr"><span class="fid">FR-8</span><h3>Форма обращения</h3><p>«Кто вы?», «Тема», «Анонимно» (включено по умолчанию; если выключить, появятся «Имя» и «Как связаться»), «Что произошло?»*, «Когда?», «Где?», «Кто может подтвердить?», подтверждение добросовестности*. <b>Форма никуда не отправляет данные</b>, она только составляет текст.</p><div class="ok">ошибка и фокус на пустом обязательном поле; «Новое обращение» очищает форму</div>
+      <button type="button" class="btn pri" id="mk" style="margin-top:10px">Показать пример текста обращения</button>
+      <pre class="ticket" id="ticket" hidden></pre>
+    </div>
+    <div class="fr"><span class="fid">FR-9</span><h3>Темы обращения</h3><div class="std" style="margin-top:4px"><span>коррупция и подарки</span><span>конфликт интересов</span><span>дискриминация, травля, домогательства</span><span>персональные данные</span><span>информационная безопасность</span><span>мошенничество и злоупотребления</span><span>безопасность труда</span><span>вопрос по этике</span></div></div>
+    <div class="fr"><span class="fid">FR-10</span><h3>Внешний канал</h3><p>Служба по противодействию коррупции КНБ РК: бесплатный номер <b>1424</b> и портал eOtinish. Сначала обращаться в Компанию не обязательно.</p></div>
+  </div>
+</section>
+
+<!-- 9 -->
+<section id="s9">
+  <div class="sh"><span class="n">9</span><h2>Контент</h2></div>
+  <h3>9.1. Темы</h3>
+  <div class="tabs" id="tabs" role="tablist" aria-label="Темы Кодекса"></div>
+  <div id="tpanel"></div>
+
+  <h3 style="margin-top:32px">9.2. Кейсы <span class="sub">у каждого: ситуация, три варианта, разбор, нормы РК и мировая практика на трёх языках</span></h3>
+  <div class="cases" id="cases"></div>
+
+  <h3 style="margin-top:32px">9.3. Вопросы и ответы <span class="sub">21 вопрос по темам</span></h3>
+  <div class="panel"><div class="bars" id="bars"></div></div>
+
+  <h3 style="margin-top:32px">9.4. Тон и стиль</h3>
+  <div class="grid g2">
+    <div class="card small"><ul style="margin:0;padding-left:18px"><li>Коротко, прямо, без канцелярита; на «вы».</li><li>Факты и действия: «Что сделать», «Почему», «Что говорит закон».</li><li>Имена, типичные для Актау; ситуации типовые, реальных людей нет.</li></ul></div>
+    <div class="card small"><b>Казахская версия — полноценный текст, а не дословный перевод.</b><div class="std" style="margin-top:8px"><span lang="kk">сенім желісі</span><span lang="kk">мүдделер қақтығысы</span><span lang="kk">дербес деректер</span><span lang="kk">сыбайлас жемқорлық</span></div></div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section id="s10">
+  <div class="sh"><span class="n">10</span><h2>Правовая основа</h2></div>
+  <h3>10.1. Законодательство Республики Казахстан</h3>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Акт</th><th>Реквизиты</th><th>Как используется</th></tr></thead>
+      <tbody>
+        <tr><td>Закон «О противодействии коррупции»</td><td>18.11.2015 № 410-V</td><td>Ст. 16 — меры бизнеса; ст. 24 — сообщение о коррупции; ст. 24-1 — защита трудовых прав заявителя в течение трёх лет</td></tr>
+        <tr><td>Уголовный кодекс</td><td>03.07.2014 № 226-V</td><td>Ст. 123, 147, 190, 253, 366–368, 419; глава 7</td></tr>
+        <tr><td>КоАП</td><td>05.07.2014 № 235-V</td><td>Ст. 79 — персональные данные; глава 34 — коррупционные правонарушения</td></tr>
+        <tr><td>Трудовой кодекс</td><td>23.11.2015 № 414-V</td><td>Ст. 6 — запрет дискриминации; с 04.08.2026 — право на уважение чести и достоинства (Закон № 295-VIII)</td></tr>
+        <tr><td>Закон «О персональных данных и их защите»</td><td>21.05.2013 № 94-V</td><td>Согласие (ст. 7–8), обработка без согласия (ст. 9), хранение в РК (ст. 12); поправки 2026 г.</td></tr>
+        <tr><td>Закон «Об информатизации»</td><td>24.11.2015 № 418-V</td><td>Защита электронных информационных ресурсов</td></tr>
+        <tr><td>Закон о ТОО и ТДО</td><td>22.04.1998 № 220-I</td><td>Ст. 12-2 — учёт аффилированных лиц</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="ref">
+    <div class="card"><b>4 325 ₸</b><span class="small muted">1 МРП в 2026 году</span></div>
+    <div class="card"><b>8 650 ₸</b><span class="small muted">порог символического подарка, 2 МРП</span></div>
+    <div class="card"><b>1424</b><span class="small muted">call-центр Службы по противодействию коррупции КНБ РК</span></div>
+  </div>
+  <h3 style="margin-top:28px">10.2. Международные стандарты и практики</h3>
+  <div class="std">
+    <span>Конвенция ООН против коррупции (РК, 2008)</span><span>ISO 37001</span><span>ISO 37301</span><span>ISO 37002</span><span>ISO/IEC 27001</span><span>ISO/IEC 27701</span><span>GDPR (ЕС 2016/679) как ориентир</span><span>ISO 45003</span><span>Принципы ОЭСР (ред. 2023)</span><span>Глобальный договор ООН, принцип 10</span><span>Конвенция МОТ № 190</span><span>Правила ICC по борьбе с коррупцией</span>
+  </div>
+</section>
+
+<!-- 11 -->
+<section id="s11">
+  <div class="sh"><span class="n">11</span><h2>Горячая линия</h2></div>
+  <h3>11.1. Каналы</h3>
+  <div class="chan">
+    <div class="card"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg></span><b>Телефон</b><span class="small muted">Пн–пт, 09:00–18:00 (время Актау)</span><span class="v">+7 (7292) 00-00-00</span><span class="chip butter" style="align-self:flex-start">образец</span></div>
+    <div class="card"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><b>E-mail</b><span class="small muted">Круглосуточно</span><span class="v">ethics@aktaucity.example</span><span class="chip butter" style="align-self:flex-start">образец</span></div>
+    <div class="card"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/></svg></span><b>Telegram</b><span class="small muted">Круглосуточно, можно анонимно</span><span class="v">@aktaucity_ethics</span><span class="chip butter" style="align-self:flex-start">образец</span></div>
+    <div class="card"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span><b>Форма на сайте</b><span class="small muted">Круглосуточно</span><span class="small">Составляет текст для отправки по e-mail или в Telegram</span></div>
+    <div class="card ext"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg></span><b>Внешний канал · 1424</b><span class="small muted">Служба по противодействию коррупции КНБ РК, а также портал eOtinish</span></div>
+  </div>
+
+  <h3 style="margin-top:28px">11.2. Гарантии для заявителя</h3>
+  <ul class="guar">
+    <li><b>Конфиденциальность</b>Сведения о заявителе знает только комплаенс-служба; раскрывать их без согласия запрещено.</li>
+    <li><b>Анонимность</b>Имя можно не указывать; для связи достаточно номера обращения.</li>
+    <li><b>Запрет преследования</b>Увольнение, понижение, лишение премии и давление запрещены. Свидетели защищены так же.</li>
+    <li><b>Беспристрастность</b>Обращение не рассматривают те, о ком оно, и их руководители.</li>
+    <li><b>Добросовестность</b>Ответственность наступает только за заведомо ложный донос (ст. 419 УК РК).</li>
+  </ul>
+
+  <h3 style="margin-top:28px">11.3. Порядок рассмотрения <span class="sub">внутренний стандарт, утвердить</span></h3>
+  <div class="panel">
+    <div class="flow">
+      <div class="step"><span class="dot">1</span><div><h4>Регистрация и номер</h4><span class="t">1 раб. день</span></div></div>
+      <div class="step"><span class="dot">2</span><div><h4>Оценка комплаенс-службой</h4><span class="t">5 раб. дней</span></div></div>
+      <div class="step"><span class="dot">3</span><div><h4>Независимая проверка</h4><span class="t">как правило, до 30 кал. дней</span></div></div>
+      <div class="step"><span class="dot">4</span><div><h4>Решение и ответ заявителю</h4><span class="t">после проверки</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 -->
+<section id="s12">
+  <div class="sh"><span class="n">12</span><h2>Нефункциональные требования</h2></div>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>ID</th><th>Область</th><th>Требование</th></tr></thead>
+      <tbody>
+        <tr><td>NFR-1</td><td>Адаптивность</td><td>От 360 px до широких экранов, без горизонтальной прокрутки; на узких экранах меню и список кейсов листаются горизонтально</td></tr>
+        <tr><td>NFR-2</td><td>Темы оформления</td><td>Светлая и тёмная по настройке устройства; все цвета заданы токенами</td></tr>
+        <tr><td>NFR-3</td><td>Доступность</td><td>Клавиатура, видимый фокус, <code>aria</code> для вкладок, групп кнопок и живых областей, ссылка «Перейти к содержанию», <code>prefers-reduced-motion</code>; цель — WCAG 2.1 AA</td></tr>
+        <tr><td>NFR-4</td><td>Производительность</td><td>Один HTML-файл около 230 КБ; иллюстрации — встроенные SVG; из внешних зависимостей только Google Fonts</td></tr>
+        <tr><td>NFR-5</td><td>Приватность</td><td>Нет cookies, трекеров и аналитики; в браузере хранится только язык; данные формы не покидают устройство</td></tr>
+        <tr><td>NFR-6</td><td>Языки</td><td>Полное покрытие RU / KZ / EN; казахские буквы <span lang="kk">ә ғ қ ң ө ұ ү һ і</span></td></tr>
+        <tr><td>NFR-7</td><td>Актуальность</td><td>Нормы на сентябрь 2026 г.; пересмотр не реже раза в год и при изменении законов</td></tr>
+        <tr><td>NFR-8</td><td>Оговорка</td><td>В подвале указано, что материалы носят разъяснительный характер и не заменяют консультацию юриста</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 13 -->
+<section id="s13">
+  <div class="sh"><span class="n">13</span><h2>Дизайн</h2></div>
+  <p>Пастельные тона, спокойная деловая подача, собственные плоские иллюстрации. Цвет кодирует тему во вкладках, метках кейсов и вопросов.</p>
+  <h3 style="margin-top:20px">Цвета <span class="sub">светлая тема</span></h3>
+  <div class="sw" id="sw"></div>
+  <h3 style="margin-top:28px">Шрифты</h3>
+  <div class="fonts">
+    <div class="font"><div class="spec" style="font-family:var(--f-display);font-weight:700">Честно — даже когда никто не видит</div><div class="info"><b>Unbounded</b>Заголовки</div></div>
+    <div class="font"><div class="spec" style="font-family:var(--f-body);font-weight:500"><span lang="kk">Сенім желісі</span> · Hotline · Горячая линия</div><div class="info"><b>Golos Text</b>Основной текст, есть казахские буквы</div></div>
+  </div>
+  <h3 style="margin-top:28px">Иллюстрации</h3>
+  <div class="illus">
+    <span><i style="background:var(--sky);color:var(--sky-ink)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 21l1-14h2l1 14M9 7h6l-1-3h-4z"/></svg></i>Каспий и маяк</span>
+    <span><i style="background:var(--peach);color:var(--peach-ink)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="9" width="16" height="11" rx="1"/><path d="M12 9v11M4 13h16M12 9c-2-4-6-3-5 0M12 9c2-4 6-3 5 0"/></svg></i>подарок</span>
+    <span><i style="background:var(--lav);color:var(--lav-ink)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M5 7h14M3 14l2-7 2 7a2 2 0 01-4 0zM17 14l2-7 2 7a2 2 0 01-4 0z"/></svg></i>весы</span>
+    <span><i style="background:var(--mint);color:var(--mint-ink)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h11v7H7l-4 3zM10 15h7l4 3v-9h-4"/></svg></i>диалог</span>
+    <span><i style="background:var(--rose);color:var(--rose-ink)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c1-2 5-2 6 0M15 10h3M15 13h3"/></svg></i>удостоверение</span>
+    <span><i style="background:var(--sky);color:var(--sky-ink)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="5" width="16" height="10" rx="1"/><path d="M2 19h20M10 10V9a2 2 0 014 0v1M9.5 10h5v3h-5z"/></svg></i>ноутбук с замком</span>
+    <span><i style="background:var(--butter);color:var(--butter-ink)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14v-2a8 8 0 0116 0v2M4 14h3v5H4zM17 14h3v5h-3zM20 19c0 2-3 2-6 2"/></svg></i>гарнитура</span>
+    <span><i style="background:var(--accent-soft);color:var(--accent)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V9l6-3v15M9 21V4l8 3v14M17 21v-9l4 2v7M2 21h20"/></svg></i>здания партнёров</span>
+  </div>
+</section>
+
+<!-- 14 -->
+<section id="s14">
+  <div class="sh"><span class="n">14</span><h2>Модель данных и настройка</h2></div>
+  <p class="muted">Весь контент хранится в коде страницы на трёх языках. Чтобы добавить кейс или вопрос, достаточно добавить объект в массив: счётчики, фильтры и списки обновятся сами.</p>
+  <div class="dm">
+    <div class="card"><h3>HOTLINE</h3><div class="f"><code>demo</code><code>phone</code><code>email</code><code>telegram</code></div><p class="small muted" style="margin:8px 0 0">Единственное место для контактов горячей линии</p></div>
+    <div class="card"><h3>UI</h3><div class="f"><code>ru</code><code>kk</code><code>en</code></div><p class="small muted" style="margin:8px 0 0">Все подписи интерфейса</p></div>
+    <div class="card"><h3>TOPICS</h3><div class="f"><code>id</code><code>цвет</code><code>заголовок</code><code>вводный текст</code><code>do</code><code>dont</code><code>law</code><code>world</code></div></div>
+    <div class="card"><h3>CASES</h3><div class="f"><code>id</code><code>тема</code><code>pos</code><code>заголовок</code><code>ситуация</code><code>вопрос</code><code>варианты: t, fb, ok</code><code>разбор</code><code>law</code><code>world</code></div></div>
+    <div class="card"><h3>FAQ</h3><div class="f"><code>тема</code><code>вопрос</code><code>ответ</code></div></div>
+    <div class="card"><h3>LAWS_KZ / LAWS_WORLD</h3><div class="f"><code>название</code><code>реквизиты</code><code>описание</code><code>код adilet</code></div></div>
+  </div>
+</section>
+
+<!-- 15 -->
+<section id="s15">
+  <div class="sh"><span class="n">15</span><h2>Ограничения и открытые вопросы</h2></div>
+  <div class="qs">
+    <div class="qrow"><span class="qid">Q1</span><span>Заменить контакты горячей линии на действующие и выставить <code>demo: false</code></span><span class="own">Комплаенс-служба</span></div>
+    <div class="qrow"><span class="qid">Q2</span><span>Утвердить порог подарка (2 МРП) и правила Журнала подарков как внутреннюю политику</span><span class="own">Комплаенс, юристы</span></div>
+    <div class="qrow"><span class="qid">Q3</span><span>Утвердить сроки рассмотрения обращений (1 / 5 / 30 дней)</span><span class="own">Комплаенс-служба</span></div>
+    <div class="qrow"><span class="qid">Q4</span><span>Проверить казахский и английский тексты у носителя языка и юриста</span><span class="own">HR / юристы</span></div>
+    <div class="qrow"><span class="qid">Q5</span><span>Обращение руководства: согласовать текст и подпись</span><span class="own">Руководство</span></div>
+    <div class="qrow"><span class="qid">Q6</span><span>Открыть доступ третьим лицам: сделать страницу публичной или разместить на домене Компании</span><span class="own">ИТ</span></div>
+    <div class="qrow"><span class="qid">Q7</span><span>Проверить английские версии актов на adilet.zan.kz; если их нет, давать ссылку на русский текст</span><span class="own">ИТ / юристы</span></div>
+    <div class="qrow"><span class="qid">Q8</span><span>Определить ответственного за обработку персональных данных и указать его на сайте</span><span class="own">Руководство</span></div>
+  </div>
+  <p class="small muted" style="margin-top:10px">Все вопросы в статусе «Открыт».</p>
+</section>
+
+<!-- 16 -->
+<section id="s16">
+  <div class="sh"><span class="n">16</span><h2>Дорожная карта</h2></div>
+  <div class="road">
+    <div class="rv t-mint"><b>v1.1</b>Реальные контакты; утверждённые пороги и сроки; вычитка переводов; публикация для третьих лиц</div>
+    <div class="rv t-sky"><b>v2.0</b>Серверный приём обращений: защищённое хранилище в РК (ст. 12 Закона № 94-V), шифрование, доступ только у комплаенс-службы, журнал действий; статус по номеру; процесс по ISO 37002</div>
+    <div class="rv t-lav"><b>v2.1</b>Учёт прохождения кейсов (метрика G1), ежегодное подтверждение ознакомления с Кодексом</div>
+    <div class="rv t-peach"><b>v2.2</b>Онлайн-журнал подарков и ежегодная декларация о конфликте интересов</div>
+    <div class="rv t-rose"><b>v3.0</b>Новые кейсы по безопасности труда и закупкам; ежегодное обновление правовой базы</div>
+  </div>
+</section>
+
+<!-- 17 -->
+<section id="s17">
+  <div class="sh"><span class="n">17</span><h2>Критерии приёмки v1</h2></div>
+  <div class="progress"><span id="pc">0 из 7</span><div class="bar"><i id="pb"></i></div><span class="muted small">отметки сохраняются в этом браузере</span></div>
+  <ul class="checks" id="checks"></ul>
+</section>
+
+<!-- 18 -->
+<section id="s18">
+  <div class="sh"><span class="n">18</span><h2>Источники</h2></div>
+  <ul class="src">
+    <li>Закон «О противодействии коррупции», ст. 16 — <a href="https://kodeksy-kz.com/ka/o_protivodejstvii_korruptsii/16.htm" target="_blank" rel="noopener">kodeksy-kz.com</a></li>
+    <li>Там же, ст. 24-1 — <a href="https://kodeksy-kz.com/ka/o_protivodejstvii_korruptsii/24-1.htm" target="_blank" rel="noopener">kodeksy-kz.com</a></li>
+    <li>Служба по противодействию коррупции КНБ — <a href="https://informburo.kz/novosti/cem-budet-zanimatsia-sluzba-po-protivodeistviiu-korrupcii-v-strukture-knb-opublikovan-ukaz" target="_blank" rel="noopener">informburo.kz</a></li>
+    <li>Поправки в Трудовой кодекс с 4 августа 2026 — <a href="https://www.zakon.kz/pravo/6520782-kak-popravki-v-trudovoy-kodeks-zashchityat-prava-rabotnikov-s-4-avgusta-2026-goda.html" target="_blank" rel="noopener">zakon.kz</a></li>
+    <li>МРП на 2026 год — <a href="https://pro1c.kz/news/zakonodatelstvo/mrp-i-mzp-na-2026-goda/" target="_blank" rel="noopener">pro1c.kz</a></li>
+    <li>УК РК, ст. 367 — <a href="https://kodeksy-kz.com/ka/ugolovnyj_kodeks/367.htm" target="_blank" rel="noopener">kodeksy-kz.com</a></li>
+    <li>УК РК, ст. 147 — <a href="https://zakonexpertt.kz/statya/uk-rk-147" target="_blank" rel="noopener">zakonexpertt.kz</a></li>
+    <li>Закон о персональных данных, ст. 12 — <a href="https://kodeksy-kz.com/ka/o_personalnyh_dannyh_i_ih_zawite/12.htm" target="_blank" rel="noopener">kodeksy-kz.com</a></li>
+    <li>Персональные данные РК 2026 — <a href="https://metrium.kz/blog/personalnye-dannye-kazakhstan-2026-sait-politika" target="_blank" rel="noopener">metrium.kz</a></li>
+    <li>Уведомление об утечке персональных данных — <a href="https://www.zakon.kz/pravo/6531390-narushenie-personalnykh-dannykh-kto-uvedomlyaet-i-kogda.html" target="_blank" rel="noopener">zakon.kz</a></li>
+    <li>Обновлённые правила защиты персональных данных — <a href="https://www.zakon.kz/pravo/6531379-pravila-zashchity-personalnykh-dannykh-obnovili-v-kazakhstane.html" target="_blank" rel="noopener">zakon.kz</a></li>
+    <li>КоАП РК, ст. 79 — <a href="https://kodeksy-kz.com/ka/ob_administrativnyh_pravonarusheniyah/79.htm" target="_blank" rel="noopener">kodeksy-kz.com</a></li>
+  </ul>
+</section>
+
+<footer>
+  <span>PRD: сайт деловой этики и комплаенса ТОО «Актау Сити» · v1.0 · 29.09.2026 · черновик</span>
+  <a href="#top">Наверх ↑</a>
+</footer>
+
+</main>
+</div>
+
+<script>
+(function(){
+  /* ---------- Structure hover ---------- */
+  const blks=[...document.querySelectorAll('#phone [data-k]')],items=[...document.querySelectorAll('#slist li')];
+  const hl=k=>{blks.forEach(b=>b.classList.toggle('hl',b.dataset.k===k));items.forEach(i=>i.classList.toggle('hl',i.dataset.k===k))};
+  items.forEach(i=>{i.onmouseenter=()=>hl(i.dataset.k);i.onmouseleave=()=>hl(null)});
+
+  /* ---------- Ethical filter (FR-4) ---------- */
+  const QS=['Это законно?','Это соответствует Кодексу и правилам Компании?','Вы спокойно расскажете об этом руководителю?','Вам будет комфортно, если об этом напишут в новостях?','Это честно по отношению к коллегам, партнёрам и жителям?'];
+  const ans=Array(5).fill(null);
+  const fl=document.getElementById('filter'),vd=document.getElementById('verdict');
+  fl.innerHTML=QS.map((q,i)=>'<div class="q3row"><span>'+(i+1)+'. '+q+'</span><div class="seg" role="group" aria-label="'+q+'"><button type="button" data-i="'+i+'" data-v="y" aria-pressed="false">Да</button><button type="button" data-i="'+i+'" data-v="u" aria-pressed="false">Не уверен(а)</button><button type="button" data-i="'+i+'" data-v="n" aria-pressed="false">Нет</button></div></div>').join('');
+  function render(){
+    fl.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(ans[+b.dataset.i]===b.dataset.v)));
+    const n=ans.filter(Boolean).length;let cls='',txt='Отвечено: '+n+' из 5';
+    if(ans.includes('n')){cls='n';txt='Не делайте этого'}
+    else if(n===5&&ans.includes('u')){cls='u';txt='Остановитесь и посоветуйтесь'}
+    else if(n===5){cls='y';txt='Скорее всего, можно действовать'}
+    vd.className='verdict '+cls;
+    vd.innerHTML='<span>'+txt+'</span><button type="button" class="btn" id="rst">Сбросить</button>';
+    document.getElementById('rst').onclick=()=>{ans.fill(null);render()};
+  }
+  fl.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;ans[+b.dataset.i]=b.dataset.v;render()});
+  render();
+
+  /* ---------- Case demo (FR-3) ---------- */
+  const OPTS=[
+    ['Ничего не делать: решение принимает вся комиссия, один голос ничего не решает.','Неверно. Даже один голос и доступ к заявкам позволяют повлиять на итог, а это и есть конфликт интересов.',false],
+    ['Попросить брата тихо отозвать заявку, чтобы не было вопросов.','Неверно. Так конфликт скрывается, а Компания теряет честную конкуренцию. Раскрыть конфликт всё равно нужно.',false],
+    ['Письменно раскрыть конфликт интересов и взять самоотвод.','Верно. Раскрытие до принятия решения и самоотвод требуются по ст. 16 Закона «О противодействии коррупции» и по Кодексу.',true]
+  ];
+  const op=document.getElementById('opts'),fb=document.getElementById('fb');
+  function drawCase(){
+    op.innerHTML=OPTS.map((o,i)=>'<button type="button" data-i="'+i+'"><b>'+'ABC'[i]+'</b><span>'+o[0]+'</span></button>').join('');
+    fb.className='fb';fb.innerHTML='';
+  }
+  op.addEventListener('click',e=>{const b=e.target.closest('button');if(!b||b.disabled)return;const i=+b.dataset.i;
+    op.querySelectorAll('button').forEach((x,j)=>{x.disabled=true;if(OPTS[j][2])x.classList.add('right');else if(j===i)x.classList.add('wrong')});
+    fb.className='fb show';fb.innerHTML=OPTS[i][1]+(OPTS[i][2]?'':'<div style="margin-top:8px"><button type="button" class="btn" id="again">Попробовать снова</button></div>');
+    const a=document.getElementById('again');if(a)a.onclick=drawCase});
+  drawCase();
+
+  /* ---------- Ticket sample (FR-8) ---------- */
+  document.getElementById('mk').onclick=()=>{
+    const t=document.getElementById('ticket'),num='ETH-2026-'+String(Math.floor(Math.random()*1e5)).padStart(5,'0');
+    t.textContent='Обращение № '+num+'\nДата: '+new Date().toLocaleDateString('ru-RU')+'\nКто вы: подрядчик\nТема: коррупция и подарки\nАнонимно: да\n\nЧто произошло: сотрудник попросил «отблагодарить» за подписание акта приёмки.\nКогда: 25.09.2026\nГде: строительный объект\nКто может подтвердить: прораб подрядчика\n\nПодтверждаю, что сообщаю добросовестно.';
+    t.hidden=false;
+  };
+
+  /* ---------- Topics (9.1) ---------- */
+  const TOPICS=[
+    ['peach','Антикоррупция и подарки',['Только символические подарки до 2 МРП (8 650 ₸ в 2026 г.)','Подарки дороже регистрируются в Журнале подарков','Никаких подарков во время тендера','Запрет «платежей за ускорение»','Проверка посредников'],'Закон «О противодействии коррупции» (ст. 16); УК ст. 253, 366–368; КоАП, глава 34','ISO 37001, Конвенция ООН против коррупции, Правила ICC'],
+    ['lav','Конфликт интересов',['Письменное раскрытие до принятия решения','Ежегодная декларация','Самоотвод','Нет прямого подчинения родственников','Согласование подработки'],'Закон «О противодействии коррупции» (ст. 16, п. 1, пп. 3); Закон о ТОО (ст. 12-2)','ОЭСР, ISO 37001, ISO 37301'],
+    ['mint','Уважение на работе',['Нет дискриминации, травли, угроз и домогательств — в офисе, на объектах, в чатах','Критика работы, а не личности','Поддержка пострадавших','Право общаться на казахском и русском'],'Трудовой кодекс (ст. 6; с 04.08.2026 — право на уважение чести и достоинства, Закон № 295-VIII); УК ст. 123','Конвенция МОТ № 190, ISO 45003, Руководящие принципы ООН'],
+    ['rose','Персональные данные',['Согласие с целью и сроком','Минимум данных','Хранение только в Казахстане','Проверка личности','Нельзя публиковать списки должников и пересылать удостоверения в мессенджерах'],'Закон № 94-V (ст. 7–8, 9, 12); с 18.01.2026 срок согласия соответствует цели обработки; с сентября 2026 уведомление об утечке за 1 рабочий день; КоАП ст. 79; УК ст. 147','GDPR, ISO/IEC 27701, privacy by design'],
+    ['sky','Информационная безопасность',['Только корпоративные системы','Надёжные пароли и двухфакторная аутентификация','Никому не передавать пароль','Чужие флешки не подключать','Проверять письма «от директора»'],'Закон «Об информатизации» № 418-V; УК глава 7, ст. 190','ISO/IEC 27001, правило «четырёх глаз», обучение распознаванию фишинга']
+  ];
+  const tabs=document.getElementById('tabs'),tp=document.getElementById('tpanel');
+  tabs.innerHTML=TOPICS.map((t,i)=>'<button type="button" role="tab" id="tab'+i+'" aria-controls="tpanel" class="t-'+t[0]+'">'+t[1]+'</button>').join('');
+  const tbs=[...tabs.children];
+  tp.setAttribute('role','tabpanel');
+  function showTopic(i,focus){
+    tbs.forEach((b,j)=>{b.setAttribute('aria-selected',String(i===j));b.tabIndex=i===j?0:-1});
+    if(focus)tbs[i].focus();
+    const t=TOPICS[i];
+    tp.className='tp t-'+t[0];tp.setAttribute('aria-labelledby','tab'+i);
+    tp.innerHTML='<h3 style="margin:0">'+t[1]+'</h3><div class="cols"><div class="box"><h4>Ключевые правила</h4><ul>'+t[2].map(x=>'<li>'+x+'</li>').join('')+'</ul></div><div class="box"><h4>Законодательство РК</h4>'+t[3]+'</div><div class="box"><h4>Мировая практика</h4>'+t[4]+'</div></div>';
+  }
+  tbs.forEach((b,i)=>{b.onclick=()=>showTopic(i);b.onkeydown=e=>{
+    if(e.key==='ArrowRight'){e.preventDefault();showTopic((i+1)%tbs.length,true)}
+    if(e.key==='ArrowLeft'){e.preventDefault();showTopic((i-1+tbs.length)%tbs.length,true)}}});
+  showTopic(0);
+
+  /* ---------- Cases list (9.2) ---------- */
+  const TC={a:['peach','Антикоррупция'],c:['lav','Конфликт интересов'],r:['mint','Уважение'],p:['rose','Персональные данные'],i:['sky','Информационная безопасность']};
+  const CASES=[
+    ['a1','a','Подарок в разгар тендера','Айгерим, закупки','Вернуть подарок, письменно сообщить руководителю и комплаенс-службе, записать в Журнал подарков'],
+    ['a2','a','«Консультант», который всё ускорит','Ерлан, руководитель проекта','Отказаться, записать детали, сообщить комплаенс-службе; разрешение — только по официальной процедуре'],
+    ['c1','c','Брат участвует в тендере','Данияр, тендерная комиссия','Письменно раскрыть конфликт и взять самоотвод'],
+    ['c2','c','Подработка по выходным у подрядчика','Марат, инженер','Сообщить заранее; отказаться от работы на подрядчика, с которым пересекается по службе'],
+    ['r1','r','«Просто шутки» в рабочем чате','Анна','Поддержать коллегу, обозначить недопустимость, сообщить HR или на горячую линию'],
+    ['r2','r','Настойчивые приглашения руководителя','Динара','Сохранить переписку, обратиться на горячую линию или в HR, попросить меры защиты'],
+    ['p1','p','Список должников в чате дома','Гульнар, менеджер','Общее напоминание без персональных данных и индивидуальные уведомления должникам'],
+    ['p2','p','Звонок от «родственника»','Асель, колл-центр','Отказать; сведения — только самому человеку после проверки личности или по официальному запросу'],
+    ['d1','p','База жителей в личном мессенджере','Сауле, менеджер','Работать только через корпоративный доступ; при утечке сразу сообщить в ИТ и комплаенс-службу'],
+    ['d2','i','Срочный платёж «от директора»','Ержан, бухгалтер','Не платить; проверить по известному номеру; переслать письмо в ИТ-безопасность'],
+    ['s1','i','Коллега просит ваш пароль','Нурлан','Отказать; оформить временный доступ через ИТ по заявке руководителя']
+  ];
+  document.getElementById('cases').innerHTML=CASES.map(c=>{const t=TC[c[1]];return '<div class="cs t-'+t[0]+'"><div class="top"><code>'+c[0]+'</code><span class="chip '+t[0]+'" style="font-size:12px">'+t[1]+'</span></div><b>'+c[2]+'</b><span class="small muted">'+c[3]+'</span><div class="ans"><span style="color:var(--mint-ink);font-weight:700">✓ </span>'+c[4]+'</div></div>'}).join('');
+
+  /* ---------- FAQ bars (9.3) ---------- */
+  const FAQ=[['peach','Антикоррупция',4],['lav','Конфликт интересов',3],['mint','Уважение',3],['rose','Персональные данные',6],['sky','Информационная безопасность',1],['butter','Горячая линия',4]];
+  document.getElementById('bars').innerHTML=FAQ.map(f=>'<div class="bar-row t-'+f[0]+'"><span>'+f[1]+'</span><div class="tr"><i style="width:'+(f[2]/6*100)+'%"></i></div><b>'+f[2]+'</b></div>').join('');
+
+  /* ---------- Palette (13) ---------- */
+  const PAL=[['--bg','Фон страницы','#F5F7FA'],['--ink','Основной текст','#21304A'],['--accent','Кнопки, акценты','#2D7A74'],['--peach','Антикоррупция','#F9DDCD'],['--lav','Конфликт интересов','#E2DEF6'],['--mint','Уважение','#D1ECE4'],['--rose','Персональные данные','#F8DEE5'],['--sky','Информационная безопасность','#D7E8F7'],['--butter','Горячая линия','#F7EFCB']];
+  const lum=h=>{const c=[1,3,5].map(i=>parseInt(h.substr(i,2),16)/255);return .2126*c[0]+.7152*c[1]+.0722*c[2]};
+  document.getElementById('sw').innerHTML=PAL.map(([t,r,v])=>'<div class="swatch"><div class="c" style="background:'+v+';color:'+(lum(v)>.5?'#21304A':'#fff')+'">'+v+'</div><div class="lab"><code>'+t+'</code><div class="muted small">'+r+'</div></div></div>').join('');
+
+  /* ---------- Acceptance (17) ---------- */
+  const CHECKS=[
+    'Все 9 разделов отображаются на русском, казахском и английском без смешения языков.',
+    '5 тем, 11 кейсов и 21 вопрос доступны; счётчики и фильтры работают.',
+    'Форма формирует обращение с номером и датой на выбранном языке; обязательные поля проверяются.',
+    'Контакты горячей линии действующие, пометка «образец» скрыта.',
+    'Нет горизонтальной прокрутки на ширине 360–390 px; светлая и тёмная темы читаемы.',
+    'Навигация с клавиатуры работает для вкладок, кейсов, фильтра и формы.',
+    'Юридическая служба подтвердила актуальность норм на дату публикации.'
+  ];
+  const KEY='prd-aktau-checks';let saved=[];
+  try{saved=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){}
+  const ul=document.getElementById('checks');
+  ul.innerHTML=CHECKS.map((c,i)=>'<li><label><input type="checkbox"'+(saved.includes(i)?' checked':'')+'><span>'+c+'</span></label></li>').join('');
+  const boxes=[...ul.querySelectorAll('input')];
+  function upd(){const on=boxes.map((b,i)=>b.checked?i:-1).filter(i=>i>=0);
+    document.getElementById('pc').textContent=on.length+' из '+boxes.length;
+    document.getElementById('pb').style.width=(on.length/boxes.length*100)+'%';
+    try{localStorage.setItem(KEY,JSON.stringify(on))}catch(e){}}
+  boxes.forEach(b=>b.onchange=upd);upd();
+})();
+</script>
+</body>
+</html>
